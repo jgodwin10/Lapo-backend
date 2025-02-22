@@ -15,17 +15,13 @@ export class Card extends Model<Card | ICard> {
 	@Column({ type: DataType.UUID, allowNull: false })
 	declare id: string;
 
-	@ForeignKey(() => User)
-	@Column({ type: DataType.UUID, allowNull: true })
-	declare UserId: string;
-
-	@Column({ type: DataType.STRING, allowNull: false })
+	@Column({ type: DataType.STRING, allowNull: true })
 	declare name: string;
 
-	@Column({ type: DataType.STRING, allowNull: false })
+	@Column({ type: DataType.STRING, allowNull: true })
 	declare binPrefix: string;
 
-	@Column({ type: DataType.STRING, allowNull: false, unique: true })
+	@Column({ type: DataType.STRING, allowNull: true })
 	declare scheme: string;
 
 	@Column({ type: DataType.DATE, allowNull: true })
@@ -34,18 +30,11 @@ export class Card extends Model<Card | ICard> {
 	@Column({ type: DataType.STRING, allowNull: true })
 	declare description?: string;
 
-	@Column({ type: DataType.STRING, allowNull: false, values: Object.values(Currency) })
+	@Column({ type: DataType.STRING, allowNull: true, values: Object.values(Currency) })
 	declare currency?: string;
 
-	@Column({ type: DataType.STRING, allowNull: false })
+	@Column({ type: DataType.STRING, allowNull: true })
 	declare branchBlacklist?: string;
-
-	@Column({
-		type: DataType.DATE,
-		allowNull: false,
-		defaultValue: DataType.NOW,
-	})
-	declare createdAt: Date;
 }
 
 export interface ICard {
@@ -57,7 +46,6 @@ export interface ICard {
 	description: string;
 	currency: Currency;
 	branchBlacklist?: string;
-	createdAt: Date;
 }
 
 export default Card;

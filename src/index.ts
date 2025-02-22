@@ -3,6 +3,7 @@ import _path from "path";
 import { DB_CONFIG, PORT } from "./config";
 import { initializeExpressServer } from "./app";
 import initializeDatabaseConnection from "./database";
+import { ErrorMiddleware } from "./middlewares/error-handler";
 
 dotenv.config();
 

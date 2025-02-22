@@ -16,10 +16,10 @@ export class User extends Model<User | IUser> {
 	@Column({ type: DataType.UUID, allowNull: false })
 	declare id: string;
 
-	@Column({ type: DataType.STRING, allowNull: false })
+	@Column({ type: DataType.STRING, allowNull: true })
 	declare firstname: string;
 
-	@Column({ type: DataType.STRING, allowNull: false })
+	@Column({ type: DataType.STRING, allowNull: true })
 	declare lastname: string;
 
 	@Column({ type: DataType.STRING, allowNull: false, unique: true })

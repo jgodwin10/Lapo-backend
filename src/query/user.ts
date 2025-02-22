@@ -22,9 +22,10 @@ class Query implements IQuery<User> {
 	async findUserByEmail(email: string): Promise<User | null> {
 		const user = await User.findOne({
 			where: {
-				email,
+				email: email.toLowerCase(),
 			},
 		});
+
 		return user;
 	}
 }

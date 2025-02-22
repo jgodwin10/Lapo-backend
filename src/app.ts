@@ -3,7 +3,7 @@ import express, { Application, Request, Response, NextFunction } from "express";
 import helmet from "helmet";
 import cors from "cors";
 import routeHandler from "./routes";
-import { errorHandler } from "./middlewares/error-handler";
+import { ErrorMiddleware } from "./middlewares/error-handler";
 
 const app: Application = express();
 
@@ -30,6 +30,8 @@ function initializeRouteHandlers(app: Application): void {
 			message: "Route not found",
 		});
 	});
+
+	app.use(ErrorMiddleware);
 
 	return;
 }

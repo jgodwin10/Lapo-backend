@@ -1,6 +1,6 @@
 import swaggerJsdoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
-import { Application, Express } from "express";
+import { Application } from "express";
 import { PORT } from ".";
 
 // Define Swagger options
@@ -8,22 +8,18 @@ const options: swaggerJsdoc.Options = {
 	definition: {
 		openapi: "3.0.0",
 		info: {
-			title: "API Documentation",
+			title: "LAPO API Documentation",
 			version: "1.0.0",
-			description: "API documentation for your Node.js + TypeScript project",
+			description: "LAPO API documentation for your Node.js + TypeScript project",
 		},
 		servers: [
 			{
-				url: process.env.BASE_URL,
-				description: "Production Server",
-			},
-			{
-				url: `http://localhost:${PORT}`, // Change to your actual server URL
+				url: `http://localhost:${PORT}`,
 				description: "Development server",
 			},
 		],
 	},
-	apis: ["./src/routes/*.ts"], // Path to your API route files with JSDoc comments
+	apis: ["./src/routes/*.ts"],
 };
 
 // Initialize Swagger Docs

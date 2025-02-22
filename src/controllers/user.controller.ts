@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
-import { UserQuery } from "../query";
 import { randomUUID } from "crypto";
 import { BadRequestError, NotFoundError } from "../utils/error";
 import bcrypt from "bcryptjs";
+import UserQuery from "../query/user";
 
 export default class UserController {
 	static async signup(req: Request, res: Response, _next: NextFunction) {

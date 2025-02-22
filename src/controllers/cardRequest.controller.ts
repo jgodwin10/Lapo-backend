@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
-import { CardRequestQuery } from "../query";
 import { randomUUID } from "crypto";
 import { BadRequestError, NotFoundError } from "../utils/error";
 import { Status } from "../models";
+import CardRequestQuery from "../query/cardRequest";
 
 export default class CardRequestController {
 	static async createCardRequest(req: Request, res: Response, next: NextFunction) {
@@ -62,7 +62,7 @@ export default class CardRequestController {
 
 		res.status(200).send({
 			status: "success",
-			message: "Card Request Status updated successfully",
+			message: "Card Request Status successfully",
 			data: data,
 		});
 	}

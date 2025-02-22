@@ -1,5 +1,4 @@
-import { Column, DataType, ForeignKey, IsUUID, Model, PrimaryKey, Table } from "sequelize-typescript";
-import User from "./user.model";
+import { Column, DataType, IsUUID, Model, PrimaryKey, Table } from "sequelize-typescript";
 
 export enum Currency {
 	NGN = "NGN",
@@ -22,10 +21,10 @@ export class Card extends Model<Card | ICard> {
 	declare binPrefix: string;
 
 	@Column({ type: DataType.STRING, allowNull: true })
-	declare scheme: string;
+	declare scheme?: string;
 
 	@Column({ type: DataType.DATE, allowNull: true })
-	declare expiration: Date;
+	declare expiration?: Date;
 
 	@Column({ type: DataType.STRING, allowNull: true })
 	declare description?: string;
@@ -42,9 +41,9 @@ export interface ICard {
 	name: string;
 	binPrefix: string;
 	scheme: string;
-	expiration: Date;
-	description: string;
-	currency: Currency;
+	expiration?: Date;
+	description?: string;
+	currency?: Currency;
 	branchBlacklist?: string;
 }
 

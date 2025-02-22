@@ -1,4 +1,4 @@
-import { Table, Column, Model, DataType, PrimaryKey, Default, IsUUID } from "sequelize-typescript";
+import { Table, Column, Model, DataType, PrimaryKey, IsUUID } from "sequelize-typescript";
 
 export enum Status {
 	PENDING = "Pending",
@@ -51,9 +51,9 @@ export interface ICardRequest {
 	branchName: string;
 	initiator: string;
 	cardType: string;
-	quantity: number;
-	cardCharges: number;
+	quantity?: number;
+	cardCharges?: number;
 	status?: Status;
-	batch: string;
+	batch?: string;
 	dateRequested: Date;
 }

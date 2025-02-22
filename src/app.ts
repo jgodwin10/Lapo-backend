@@ -4,6 +4,7 @@ import helmet from "helmet";
 import cors from "cors";
 import routeHandler from "./routes";
 import { ErrorMiddleware } from "./middlewares/error-handler";
+import { setupSwagger } from "./config/swagger";
 
 const app: Application = express();
 
@@ -15,14 +16,16 @@ function initializeMiddlewares(app: Application): void {
 }
 
 function initializeRouteHandlers(app: Application): void {
-	app.get("/", (_req: Request, res: Response, _next: NextFunction) => {
-		res.status(200).send({
-			status: "success",
-			message: "Welcome to LAPO API",
-		});
-	});
+	// app.get("/", (_req: Request, res: Response, _next: NextFunction) => {
+	// 	res.status(200).send({
+	// 		status: "success",
+	// 		message: "Welcome to LAPO API",
+	// 	});
+	// });
 
 	app.use("/api/v1", routeHandler);
+
+	setupSwagger(app);
 
 	app.all("*", (_req: Request, res: Response, _next: NextFunction) => {
 		res.status(404).send({
@@ -30,7 +33,6 @@ function initializeRouteHandlers(app: Application): void {
 			message: "Route not found",
 		});
 	});
-
 	app.use(ErrorMiddleware);
 
 	return;

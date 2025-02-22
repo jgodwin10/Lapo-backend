@@ -7,7 +7,7 @@ const router: import("express").Router = Router();
 
 router
     .use("/user", userRouter)
-    .use("card", cardRouter)
-    .use('card/request', cardRequestRouter)
+    .use("/card", cardRouter)
+    .use('/card/request', cardRequestRouter)
 
 export default router;

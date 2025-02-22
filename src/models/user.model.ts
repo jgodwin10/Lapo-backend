@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { BeforeCreate, BelongsTo, Column, DataType, ForeignKey, HasMany, HasOne, IsUUID, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { BeforeCreate, Column, DataType, IsUUID, Model, PrimaryKey, Table } from "sequelize-typescript";
 
 export enum UserGender {
 	MALE = "MALE",

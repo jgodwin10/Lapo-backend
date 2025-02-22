@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import { CardQuery } from "../query";
 import { randomUUID } from "crypto";
+import CardQuery from "../query/card";
+
 
 export default class CardController {
 	static async createCardProfile(req: Request, res: Response, next: NextFunction) {

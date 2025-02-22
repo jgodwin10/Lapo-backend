@@ -6,7 +6,7 @@ const router: import("express").Router = Router();
 router
 	/**
 	 * @swagger
-	 * /card/request/create:
+	 * /api/v1/card/request/create:
 	 *   post:
 	 *     summary: Create a new card request
 	 *     tags: [Card Request]
@@ -28,7 +28,7 @@ router
 	.post("/create", CardRequestController.createCardRequest)
 	/**
 	 * @swagger
-	 * /card/request:
+	 * /api/v1/card/request:
 	 *   get:
 	 *     summary: Get all card requests
 	 *     tags: [Card Request]
@@ -39,7 +39,7 @@ router
 	.get("/", CardRequestController.getAllCardRequests)
 	/**
 	 * @swagger
-	 * /card/request/{id}:
+	 * /api/v1/card/request/{id}:
 	 *   patch:
 	 *     summary: Update card request status
 	 *     tags: [Card Request]

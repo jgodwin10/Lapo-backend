@@ -6,7 +6,7 @@ const router: import("express").Router = Router();
 router
 	/**
 	 * @swagger
-	 * /user/signup:
+	 * /api/v1/user/signup:
 	 *   post:
 	 *     summary: Register a new user
 	 *     description: Creates a new user account.
@@ -35,7 +35,7 @@ router
 	.post("/signup", UserController.signup)
 	/**
 	 * @swagger
-	 * /auth/login:
+	 * /api/v1/auth/login:
 	 *   post:
 	 *     summary: User login
 	 *     description: Authenticates a user and returns a JWT token.
@@ -60,7 +60,7 @@ router
 	.post("/login", UserController.login)
 	/**
 	 * @swagger
-	 * /user:
+	 * /api/v1/user:
 	 *   get:
 	 *     summary: Get all Users
 	 *     tags: [User]

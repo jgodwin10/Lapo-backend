@@ -1,7 +1,3 @@
-Here’s a well-structured **README.md** file for your API documentation, covering installation, setup, starting the server, and available routes.  
-
----
-
 ### **📌 README.md – Lapo Backend API**  
 
 ```md

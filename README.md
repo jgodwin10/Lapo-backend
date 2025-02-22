@@ -7,7 +7,7 @@ Here’s a well-structured **README.md** file for your API documentation, coveri
 ```md
 # Lapo Backend API 🚀
 
-This is the backend API for Lapo, a card management system built with Node.js, Express, Sequelize (TypeScript), and MySQL.
+This is the backend API for Lapo, a card management system built with Node.js, Express, Sequelize (TypeScript), and POSTGRES DATABASE.
 
 ---
 
